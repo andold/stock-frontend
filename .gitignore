@@ -1,23 +1,24 @@
-.gradle
-**/build/
-!src/**/build/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Cache of project
-.gradletasknamecache
+# testing
+/coverage
 
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-/bin/
-/.settings/
-/hs_err_pid25832.log
-/hs_err_pid20412.log
-/hs_err_pid22028.log
-/hs_err_pid15320.log
-/hs_err_pid22068.log
-/hs_err_pid24712.log
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/package-lock.json
