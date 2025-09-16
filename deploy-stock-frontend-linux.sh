@@ -30,5 +30,5 @@ sudo apachectl restart
 #
 #
 jps
-sudo apchectl status
+sudo apachectl status
 #
