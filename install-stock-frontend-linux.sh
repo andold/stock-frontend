@@ -7,7 +7,8 @@ HOME_DIR=/home/andold
 INSTALL_SCRIPT_FILE_NAME=install-$PROJECT-$PROFILE.sh
 DEPLOY_SCRIPT_FILE_NAME=deploy-$PROJECT-$PROFILE.sh
 SOURCE_DIR=$HOME_DIR/src/github/$PROJECT
-DEPLOY_DIR=$HOME_DIR/deploy/apache2
+#DEPLOY_DIR=$HOME_DIR/deploy/apache2
+DEPLOY_DIR=$(pwd)
 #
 #
 date
