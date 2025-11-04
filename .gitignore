@@ -3,15 +3,16 @@
 /.babelrc
 /.classpath
 /.project
-/.settings/
 
 # dependencies
-/node_modules
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+/.externalToolBuilders/
+/.settings/
+/bin/
+/coverage/
+/node_modules/
 
 # misc
 .DS_Store
