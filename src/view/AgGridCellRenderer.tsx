@@ -12,6 +12,9 @@ import store from "../store/StockStore";
 import priceStore from "../store/PriceStore";
 import crawlStore from "../store/CrawlStore";
 
+// view
+import { DividendTableAmount } from "./DividendTableAmount";
+
 const FILL_COLOR_PRIORITY = [
 	`rgb(128, 0, 0)`,
 	`rgb(128, 32, 32)`,
@@ -77,7 +80,7 @@ export function PriceRecentCellRenderer(param: any) {
 			return;
 		}
 
-		console.log(param.data.custom);
+//		console.log(param.data.custom);
 		priceStore.search({
 				codes: [param.data.code],
 				flag: 1,
@@ -364,7 +367,14 @@ export function PriceEarningsRatioCellRenderer(param: any) {
 				<Popover.Body><table className="text-white" style={{ fontSize: 10 }}><tbody>
 					<tr className="py-0 text-start"><th colSpan={2}>배당 금액 (원)</th></tr>
 					<tr className="mb-4 py-0">
-						<td>{DividendTableAmount(mapHistory, moment(param!.data!.ipoOpen), setHeight)}</td>
+						<td>
+							<DividendTableAmount
+								mapHistory={mapHistory}
+								histories={param?.data?.custom?.histories}
+								start={moment(param?.data?.ipoOpen)}
+								setHeight={setHeight}
+							/>
+						</td>
 						<td className="m-0 p-0 align-top" style={{ width: 8 * years, }}>{dividendBarGraphAmount(mapHistory, moment(param!.data!.ipoOpen), height)}</td>
 					</tr>
 
@@ -385,6 +395,7 @@ export function PriceEarningsRatioCellRenderer(param: any) {
 	</>);
 };
 
+/*
 // 배당 금액
 function DividendTableAmount(mapHistory: any, start: any, setHeight?: any) {
 	if (!mapHistory || !start) {
@@ -427,6 +438,7 @@ function DividendTableAmount(mapHistory: any, start: any, setHeight?: any) {
 			</tbody></Table>
 	);
 }
+*/
 
 // 배당수익율 (%, 당시 주가 기준)
 function dividendTableRatioByClosingPrice(mapHistory: any, start: any) {
