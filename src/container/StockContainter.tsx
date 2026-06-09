@@ -236,7 +236,7 @@ function Header(props: any) {
 										}}>최근 배당 수집</Dropdown.Item>
 										<Dropdown.Item onClick={() => {
 											setSpinner(spinner + 1);
-											crawlStore.crawlItemIpoCloseRecent(null
+											crawlStore.crawlItemIpoCloseRecent({}
 												, () => { setSpinner(spinner - 1); }
 												, (p0: any, p1: any) => { console.warn(p0, p1); setSpinner(spinner - 1); }
 												, (p0: any, p1: any) => { console.warn(p0, p1); setSpinner(spinner - 1); }
